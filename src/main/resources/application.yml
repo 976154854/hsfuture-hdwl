@@ -1,0 +1,14 @@
+server: 
+    port: 8787
+    context-path: /
+
+spring: 
+    datasource: 
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://rm-m5e92m9862o921c444o.mysql.rds.aliyuncs.com:3306/hs_develop?useUnicode=true&allowMultiQueries=true&useSSL=false&serverTimezone=Asia/Shanghai
+      username: hs_dev
+      password: Hs@1127#Mysql
+    jpa: 
+      hibernate:
+        ddl-auto: update
+      show-sql: true
