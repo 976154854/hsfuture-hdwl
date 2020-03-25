@@ -29,8 +29,7 @@ public class RequestAspect {
 		logger.info("method:"+request.getMethod());
 		logger.info("class_method:"+joinPoint.getSignature().getDeclaringTypeName()+"."+joinPoint.getSignature().getName());
 		logger.info("args:"+joinPoint.getArgs());
-		Haoduowl student=(Haoduowl) joinPoint.getArgs()[0];
-		System.out.println(student);
+		System.out.println(logger);
 	}
 	
 	@After("log()")

@@ -2,6 +2,7 @@ package com.hdwl.entity;
 
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.time.LocalDateTime;
 
 /**
@@ -17,10 +18,17 @@ public class HdwlFeedback {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
   private Integer id;
+
+  @Column(name = "corporate_id")
   private Integer corporateId;
+
+  @Column(name = "content")
   private String content;
-  private LocalDateTime creatTime;
+
+  @Column(name = "creat_time")
+  private Date creatTime;
 
   public Integer getId() {
     return id;
@@ -46,11 +54,11 @@ public class HdwlFeedback {
     this.content = content;
   }
 
-  public LocalDateTime getCreatTime() {
+  public Date getCreatTime() {
     return creatTime;
   }
 
-  public void setCreatTime(LocalDateTime creatTime) {
+  public void setCreatTime(Date creatTime) {
     this.creatTime = creatTime;
   }
 

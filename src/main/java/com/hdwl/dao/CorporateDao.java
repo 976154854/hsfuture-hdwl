@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *@description
  *@date 2020/3/24
  */
-public interface CorporateDao extends JpaRepository<HdwlCorporate,Integer> {
+
+public interface CorporateDao extends JpaRepository<HdwlCorporate,Integer>{
 
 }

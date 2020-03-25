@@ -1,7 +1,11 @@
 package com.hdwl.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
+import java.io.Serializable;
+import java.sql.Date;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
@@ -14,32 +18,74 @@ import java.time.LocalDateTime;
  */
 @Entity
 @Table(name="hdwl_corporate")
-public class HdwlCorporate {
+public class HdwlCorporate implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
   private Integer id;
 
+  @Column(name = "corporate_name")
   private String corporateName;
+
+  @Column(name = "user_name")
   private String userName;
+
+  @Column(name = "phone")
   private String phone;
+
+  @Column(name = "number")
   private String number;
+
+  @Column(name = "share_number")
   private String shareNumber;
-  private LocalDateTime startTime;
-  private LocalDateTime endTime;
+
+  @Column(name = "start_time")
+  private String startTime;
+
+  @Column(name = "end_time")
+  private String endTime;
+
+  @Column(name = "province")
   private String province;
+
+  @Column(name = "city")
   private String city;
+
+  @Column(name = "county")
   private String county;
+
+  @Column(name = "address")
   private String address;
+
+  @Column(name = "profile")
   private String profile;
+
+  @Column(name = "license")
   private String license;
+
+  @Column(name = "picture_one")
   private String pictureOne;
+
+  @Column(name = "picture_two")
   private String pictureTwo;
+
+  @Column(name = "picture_three")
   private String pictureThree;
+
+  @Column(name = "picture_four")
   private String pictureFour;
+
+  @Column(name = "picture_five")
   private String pictureFive;
+
+  @Column(name = "video")
   private String video;
-  private java.sql.Timestamp createTime;
+
+  @Column(name = "create_time")
+  private String createTime;
+
+  @Column(name = "second")
   private Integer second;
 
   public Integer getId() {
@@ -90,21 +136,6 @@ public class HdwlCorporate {
     this.shareNumber = shareNumber;
   }
 
-  public LocalDateTime getStartTime() {
-    return startTime;
-  }
-
-  public void setStartTime(LocalDateTime startTime) {
-    this.startTime = startTime;
-  }
-
-  public LocalDateTime getEndTime() {
-    return endTime;
-  }
-
-  public void setEndTime(LocalDateTime endTime) {
-    this.endTime = endTime;
-  }
 
   public String getProvince() {
     return province;
@@ -202,11 +233,27 @@ public class HdwlCorporate {
     this.video = video;
   }
 
-  public Timestamp getCreateTime() {
+  public String getStartTime() {
+    return startTime;
+  }
+
+  public void setStartTime(String startTime) {
+    this.startTime = startTime;
+  }
+
+  public String getEndTime() {
+    return endTime;
+  }
+
+  public void setEndTime(String endTime) {
+    this.endTime = endTime;
+  }
+
+  public String getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(Timestamp createTime) {
+  public void setCreateTime(String createTime) {
     this.createTime = createTime;
   }
 
