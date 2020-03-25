@@ -1,6 +1,5 @@
 package com.hdwl.aspect;
 
-import com.hdwl.entity.Haoduowl;
 import org.apache.log4j.Logger;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
