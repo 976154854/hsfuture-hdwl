@@ -14,6 +14,8 @@ import java.util.Date;
  *@param 
  *@return 
  */
+
+
 @Data
 @Entity
 @Table(name="hdwl_corporate")
