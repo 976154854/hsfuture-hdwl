@@ -32,11 +32,12 @@ public class CorporateServiceImpl implements CorporateService{
     @PersistenceContext
     private EntityManager em;
     public RetResult getCorporateList(HdwlCorporate corporate){
-        String sql = " from HdwlCorporate a where 1=1 ";
+        String sql = "from HdwlCorporate a where 1=1 ";
         Query query = (Query) em.createQuery(sql);
         if(corporate.getId() != null){
             sql += " and a.id = ?1 ";
             query.setParameter(1,corporate.getId());
+            System.out.println("123456");
         }
         //查询
         List<HdwlCorporate> list = query.getResultList();
