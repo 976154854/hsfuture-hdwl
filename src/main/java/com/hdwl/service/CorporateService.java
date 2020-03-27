@@ -42,6 +42,9 @@ public class CorporateService {
      */
     public RetResult insertCorporate(HdwlCorporate corporate){
         corporate.setCreateTime(new Date());
+        if(corporate.getNumber() == null || corporate.getNumber().equals("")){
+            corporate.setNumber(corporate.getPhone());
+        }
         corporateMapper.insertSelective(corporate);
         return RetResult.ok();
     }

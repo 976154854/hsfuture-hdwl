@@ -87,8 +87,9 @@ public class HdwlCorporate{
   @Column(name = "create_time")
   private Date createTime;
 
+  //分享次数，默认0
   @Column(name = "second")
-  private Integer second;
+  private Integer second = 0;
 
   public interface Insert {
   }
