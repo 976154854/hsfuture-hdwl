@@ -1,12 +1,9 @@
 package com.hdwl.entity;
 
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Data;
-
 import javax.persistence.*;
+import java.sql.Date;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  *@author wangdh
