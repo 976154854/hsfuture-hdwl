@@ -45,6 +45,7 @@ public class CorporateService {
         if(corporate.getNumber() == null || corporate.getNumber().equals("")){
             corporate.setNumber(corporate.getPhone());
         }
+
         corporateMapper.insertSelective(corporate);
         return RetResult.ok();
     }
