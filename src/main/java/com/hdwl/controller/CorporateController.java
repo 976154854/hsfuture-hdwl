@@ -1,8 +1,10 @@
 package com.hdwl.controller;
 
 import com.hdwl.entity.HdwlCorporate;
+import com.hdwl.entity.HdwlFeedback;
 import com.hdwl.service.CorporateService;
 import com.hdwl.util.RetResult;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -21,7 +23,7 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("/corporate")
 public class CorporateController {
-    @Resource
+    @Autowired
     private CorporateService corporateService;
 
     /**
@@ -33,26 +35,31 @@ public class CorporateController {
      */
     @RequestMapping(value = "/getList",method = RequestMethod.POST)
     public RetResult getList(@RequestBody @Validated HdwlCorporate corporate){
-
-        return corporateService.getCorporateList(corporate);
+        return corporateService.getList(corporate);
     }
 
     /**
      *@author wangdh
-     *@description 新增（修改[带id参数]）公司信息
-     *@date 2020/3/25
+     *@description 新增
+     *@date 2020/3/27
      *@param
      *@return com.hdwl.util.RetResult
      */
-    @Transactional(readOnly = false, rollbackFor = Exception.class)
-    @RequestMapping(value = "/save",method = RequestMethod.POST)
-    public String save(@RequestBody HdwlCorporate corporate, BindingResult bindingResult){
-        if(bindingResult.hasErrors()){
-            return bindingResult.getFieldError().getDefaultMessage();
-        }else{
-            corporateService.saveCorporate(corporate);
-            return "保存成功";
-        }
+    @RequestMapping(value = "/insert",method = RequestMethod.POST)
+    public RetResult insertCorporate(@RequestBody @Validated(HdwlCorporate.Insert.class) HdwlCorporate corporate){
+        return corporateService.insertCorporate(corporate);
+    }
+
+    /**
+     *@author wangdh
+     *@description 修改
+     *@date 2020/3/27
+     *@param
+     *@return com.hdwl.util.RetResult
+     */
+    @RequestMapping(value = "/update",method = RequestMethod.POST)
+    public RetResult updateCorporate(@RequestBody @Validated(HdwlCorporate.Update.class) HdwlCorporate corporate){
+        return corporateService.updateCorporate(corporate);
     }
 
 }

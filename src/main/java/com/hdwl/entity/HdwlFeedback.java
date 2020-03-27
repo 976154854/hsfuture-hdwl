@@ -1,9 +1,12 @@
 package com.hdwl.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+
 import javax.persistence.*;
-import java.sql.Date;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  *@author wangdh
@@ -12,6 +15,7 @@ import java.time.LocalDateTime;
  *@param 
  *@return 
  */
+@Data
 @Entity
 @Table(name="hdwl_feedback")
 public class HdwlFeedback {
@@ -27,40 +31,12 @@ public class HdwlFeedback {
   @Column(name = "content")
   private String content;
 
+  @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
   @Column(name = "creat_time")
   private Date creatTime;
 
-  public Integer getId() {
-    return id;
-  }
-
-  public void setId(Integer id) {
-    this.id = id;
-  }
-
-  public Integer getCorporateId() {
-    return corporateId;
-  }
-
-  public void setCorporateId(Integer corporateId) {
-    this.corporateId = corporateId;
-  }
-
-  public String getContent() {
-    return content;
-  }
-
-  public void setContent(String content) {
-    this.content = content;
-  }
-
-  public Date getCreatTime() {
-    return creatTime;
-  }
-
-  public void setCreatTime(Date creatTime) {
-    this.creatTime = creatTime;
-  }
+  @Column(name = "phone")
+  private String phone;
 
   public interface Insert {
   }

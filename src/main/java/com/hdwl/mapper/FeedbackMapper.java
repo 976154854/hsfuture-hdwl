@@ -1,7 +1,7 @@
 package com.hdwl.mapper;
 
 import com.hdwl.entity.HdwlFeedback;
-import com.hdwl.util.BaseMapper;
+import tk.mybatis.mapper.common.BaseMapper;
 
 
 import java.util.List;
@@ -13,7 +13,5 @@ import java.util.List;
  */
 
 public interface FeedbackMapper extends BaseMapper<HdwlFeedback> {
-
-
     List<HdwlFeedback> getList(HdwlFeedback hdwlFeedback);
 }
