@@ -1,9 +1,11 @@
 package com.hdwl.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+
 import javax.persistence.*;
-import java.sql.Date;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  *@author wangdh
@@ -12,6 +14,7 @@ import java.time.LocalDateTime;
  *@param 
  *@return 
  */
+
 @Data
 @Entity
 @Table(name="hdwl_feedback")
@@ -35,7 +38,7 @@ public class HdwlFeedback {
   @Column(name = "phone")
   private String phone;
 
-  public interface Insert {
+    public interface Insert {
   }
 
   public interface Update {
